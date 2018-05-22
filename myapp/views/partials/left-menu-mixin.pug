@@ -1,0 +1,13 @@
+mixin left-menu-mixin(id, items)
+	.left-menu
+		if items.length
+			ul
+				each item in items
+					if (id === item.id)
+						li(class='current')
+							p= item.text
+					else
+						li
+							a(href='/' + item.id)= item.text
+		else
+			p No menu items

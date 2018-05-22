@@ -1,0 +1,203 @@
+$mid-screen: 780px
+$small-screen: 480px
+$content-max-width: 1024px
+
+$black-1: #333333
+$white: #ffffff
+$white-1: #f0f0f0
+$grey-1: #cccccc
+$grey-2: #bdbdbd
+$grey-3: #e9e8e8
+
+
+body
+	padding: 0
+	margin: 0
+	font: 14px Arial, sans-serif
+	color: $black-1
+	background-image: url('../images/bg.jpg')
+	background-size: cover
+
+
+// Делаю подвал сайта внизу
+html, body, .wrapper
+	height: 100%
+.wrapper
+	min-height: 100%
+
+.wrapper
+	max-width: $content-max-width
+	margin: 0 auto
+
+
+.main
+	display: flex
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15)
+
+@media (max-width: $mid-screen)
+	.main
+		display: block !important
+		margin: 0 15px
+
+@media (max-width: $small-screen)
+	.main
+		margin: 0
+
+
+.header
+	padding-top: 15px
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15)
+
+	&__wrapper
+		display: flex
+		justify-content: space-between
+		background-color: $white-1
+		padding: 20px 30px
+
+	&__logo
+		font-size: 54px
+
+	&__menu
+		padding: 0
+		margin: 0
+		display: flex
+		align-items: flex-end
+
+		li
+			list-style: none
+
+			&:last-child
+				a
+					padding-right: 0
+		a
+			padding-right: 10px
+
+@media (max-width: $mid-screen)
+	.header
+		&__wrapper
+			padding: 5px 20px
+			margin: 0 15px
+
+@media (max-width: $small-screen)
+	.header
+		padding: 0
+
+		&__menu
+			align-items: center
+
+		&__wrapper
+			margin: 0
+			padding: 5px 15px
+
+		&__logo
+			font-size: 30px
+
+
+.content
+	background-color: $white
+	padding: 20px
+	h1
+		font-size: 24px
+		padding-bottom: 20px
+		margin: 0
+		border-bottom: 3px solid $grey-1
+	p
+		margin-bottom: 20px
+	img
+		padding: 0 20px 20px 0
+
+@media (max-width: $small-screen)
+	.content
+		padding: 15px
+
+
+.left-menu
+	background-color: $grey-1
+	font-size: 16px
+	min-width: 200px
+
+	ul
+		margin: 0
+		padding: 0
+	li
+		list-style: none
+		padding: 3px 5px
+		background-color: $grey-2
+		border-bottom: 1px solid $grey-1
+
+		&.current
+			background-color: $grey-3
+	a
+		padding: 5px
+		display: block
+		text-decoration: none
+		&:hover
+			text-decoration: underline
+	p
+		padding: 5px
+		display: block
+		margin: 0
+		color: #6c6c6c
+
+@media (max-width: $mid-screen)
+	.left-menu
+		background-color: $grey-2
+
+		ul
+			padding: 5px 20px
+			display: flex
+		li
+			border-bottom: none
+		li:first-child, a:first-child
+			padding-left: 0
+
+@media (max-width: $small-screen)
+	.left-menu
+		font-size: 12px
+
+
+.right-menu
+	background-color: $grey-1
+	padding: 20px 10px
+	min-width: 200px
+
+	&__item
+		margin-bottom: 30px
+
+		&:last-child
+			margin: 0
+
+	h2
+		font-size: 24px
+		margin: 0 0 20px
+		border-bottom: 3px solid $white
+	a
+		font-size: 16px
+		color: $black-1
+	p
+		margin: 0
+
+@media (max-width: $mid-screen)
+	.right-menu
+		padding: 20px 20px 40px
+
+		&__items
+			display: flex
+		&__item
+			margin: 0 10px 0 0
+
+@media (max-width: $small-screen)
+	.right-menu
+		padding: 20px
+		&__items
+			display: block
+		&__item
+			margin-bottom: 15px
+
+
+.footer
+	color: $white-1
+	font-size: 14px
+	padding: 15px 0
+	text-align: center
+

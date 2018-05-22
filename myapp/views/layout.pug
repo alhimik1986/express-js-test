@@ -1,0 +1,23 @@
+include partials/left-menu-mixin
+include partials/right-menu-mixin
+
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+	body
+		.wrapper
+			include partials/header
+			.main
+				+left-menu-mixin(id, [
+					{id: 1, text: 'Menu 1'},
+					{id: 2, text: 'Menu 2'},
+					{id: 3, text: 'Menu 3'},
+					{id: 4, text: 'Menu 4'},
+					{id: 5, text: 'Menu 5'},
+				])
+				block content
+				+right-menu-mixin()
+			include partials/footer
