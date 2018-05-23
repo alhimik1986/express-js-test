@@ -10,14 +10,30 @@ html
 	body
 		.wrapper
 			include partials/header
-			.main
-				+left-menu-mixin(id, [
-					{id: 1, text: 'Menu 1'},
-					{id: 2, text: 'Menu 2'},
-					{id: 3, text: 'Menu 3'},
-					{id: 4, text: 'Menu 4'},
-					{id: 5, text: 'Menu 5'},
+			main
+				+left-menu-mixin(currentUrl, [
+					{url: '/left-menu/item-1', text: 'Menu 1'},
+					{url: '/left-menu/item-2', text: 'Menu 2'},
+					{url: '/left-menu/item-3', text: 'Menu 3'},
+					{url: '/left-menu/item-4', text: 'Menu 4'},
+					{url: '/left-menu/item-5', text: 'Menu 5'},
 				])
 				block content
-				+right-menu-mixin()
+				+right-menu-mixin([
+					{
+						url: '/right-menu/item-1',
+						title: 'Duis at sapien lectus.',
+						text: 'Donec a sagittis tortor, et placerat ipsum. Nam iaculis libero metus, a placerat eros molestie non.',
+					},
+					{
+						url: '/right-menu/item-2',
+						title: 'Integer eget magna dui.',
+						text: 'Cras eleifend eget justo id volutpat. Nulla vel mauris vitae magna congue porttitor ut ac leo.',
+					},
+					{
+						url: '/right-menu/item-3',
+						title: 'Cras eu scelerisque augue',
+						text: 'Vestibulum lorem nibh, viverra non metus non, semper sodales eros. Proin nisi nulla, egestas dictum arcu eget, auctor tincidunt nisl. Nunc in suscipit purus.',
+					},
+				])
 			include partials/footer

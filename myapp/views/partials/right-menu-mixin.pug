@@ -1,13 +1,8 @@
-mixin right-menu-mixin()
+mixin right-menu-mixin(items)
 	.right-menu
 		h2 Right side
 		.right-menu__items
-			.right-menu__item
-				a(href="/1") Duis at sapien lectus.
-				p Donec a sagittis tortor, et placerat ipsum. Nam iaculis libero metus, a placerat eros molestie non.
-			.right-menu__item
-				a(href="/2") Integer eget magna dui.
-				p Cras eleifend eget justo id volutpat. Nulla vel mauris vitae magna congue porttitor ut ac leo. 
-			.right-menu__item
-				a(href="/3") Cras eu scelerisque augue
-				p Vestibulum lorem nibh, viverra non metus non, semper sodales eros. Proin nisi nulla, egestas dictum arcu eget, auctor tincidunt nisl. Nunc in suscipit purus.
+			each item in items
+				.right-menu__item
+					a(href=item.url)= item.title
+					span= item.text
